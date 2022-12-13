@@ -1,4 +1,4 @@
-name: Rockchip_armv8
+name: armvirt_64
 
 on:
   repository_dispatch:
@@ -10,12 +10,12 @@ on:
         default: 'false'
 
 env:
-  OPNAME: 'Rockchip(R4S、R2S、OPiR1Plus)'
+  OPNAME: 'armvirt_64'
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   EXTERNAL_FILE: configs/External.config
-  CONFIG_FILE: configs/Rockchip.config
+  CONFIG_FILE: configs/armvirt_64.config
   SYS_CONF_SH: configure.sh
   PACKS: package.sh
   UPLOAD_BIN_DIR: false
@@ -55,7 +55,7 @@ jobs:
       uses: klever1988/cachewrtbuild@main
       with:
           ccache: 'true'
-          mixkey: 'armv8'
+          mixkey: 'armvirt_64'
           prefix: 'openwrt'
 
     - name: Load custom feeds
